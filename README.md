@@ -1,4 +1,4 @@
-# CentOSLampDocker
+# CentOS 7 with Mono
 
-This is the latest CentOS 7 with Apache, PHP and MySQL, PostgreSQL clients.
+This is the latest CentOS 7 Mono and PostgreSQL clients.
 
