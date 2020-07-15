@@ -1,9 +1,9 @@
-VERSION=latest
+VERSION=8
 
 all: pull build tag push
 
 pull:
-	sudo docker pull centos:7
+	sudo docker pull centos:8
 
 build:
 	sudo docker build --no-cache -t centos-mono .
