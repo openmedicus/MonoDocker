@@ -6,7 +6,7 @@ pull:
 	podman pull centos:8
 
 build:
-	podman build --no-cache -t centos-mono .
+	podman build --format=docker --no-cache -t centos-mono .
 
 tag:
 	podman tag centos-mono openmedicus/centos-mono:${VERSION}
