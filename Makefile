@@ -6,6 +6,8 @@ pull:
 	podman pull centos:8
 
 build:
+	cp -f Dockerfile.in Dockerfile
+	sed -i -e 's!@VERSION@!${VERSION}!g' Dockerfile
 	podman build --format=docker --no-cache -t centos-mono .
 
 tag:
