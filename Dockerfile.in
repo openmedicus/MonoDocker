@@ -4,6 +4,12 @@ MAINTAINER Mikkel Kruse Johnsen <mikkel@xmedicus.com>
 # install repos
 RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-@VERSION@.noarch.rpm http://yum.xmedicus.com/opensource/rhel-@VERSION@-x86_64/RPMS/openmedicus-release-rhel-2.8-1.el7.noarch.rpm
 
+# Remove DTS
+RUN sed -i '/# DST Root CA X3/,/-----END CERTIFICATE-----/d' /etc/pki/tls/certs/ca-bundle.crt
+ADD isrgrootx1.pem /tmp/
+RUN cat /tmp/isrgrootx1.pem >> /etc/pki/tls/certs/ca-bundle.crt
+RUN cat /etc/pki/tls/certs/ca-bundle.crt
+
 # install Extra
 # install mysql and postgresql client
 # install Mono
